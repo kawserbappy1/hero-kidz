@@ -1,5 +1,12 @@
+import Banner from "@/component/Home/Banner";
 import Image from "next/image";
 
 export default function Home() {
-  return <button className="btn btn-primary">Hello NEXT JS</button>;
+  return (
+    <>
+      <section>
+        <Banner></Banner>
+      </section>
+    </>
+  );
 }

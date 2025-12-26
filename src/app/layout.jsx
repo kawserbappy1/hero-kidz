@@ -1,10 +1,14 @@
 import { Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/component/Layouts/Navbar";
 import Footer from "@/component/Layouts/Footer";
 
-export const poppins = Poppins({
+const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
+});
+export const MyFont = localFont({
+  src: "../app/fonts/mayaboti-normal.ttf",
 });
 
 export const metadata = {
@@ -19,7 +23,9 @@ export default function RootLayout({ children }) {
         <header className="py-2 md:w-11/12 mx-auto">
           <Navbar></Navbar>
         </header>
-        <main className="py-2 md:w-11/12 mx-auto">{children}</main>
+        <main className="py-2 md:w-11/12 mx-auto min-h-[calc(100vh-324px)]">
+          {children}
+        </main>
         <footer className="py-2 md:w-11/12 mx-auto">
           <Footer></Footer>
         </footer>
